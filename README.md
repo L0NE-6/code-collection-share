@@ -2,166 +2,172 @@
 
 > 代码本收集与分享
 
-所有脚本统一放在 code/ 目录下（单文件夹）。每个脚本的状态见下表。
+收集整理自用的各类小脚本（主要为 Python），涵盖签到、自动任务、抓包分析、接口调用等场景。所有脚本统一放在 code/ 目录下（单文件夹）。
 
-## 脚本状态一览
+## 脚本列表
 
 | 脚本名称 | 状态 |
 |----------|------|
-| OPPO会员中心_code版.py | 1_实测正常 |
-| sinsin_code版.py | 1_实测正常 |
-| TILTA影像城_code版.py | 4_登录接口失效_待抓包 |
-| ykb电玩城会员_code版.py | 1_实测正常 |
-| 爱果乐_code版.py | 1_实测正常 |
-| 爱隐形_code版.py | 2_账号受限_脚本正常 |
-| 爱优客_code版.py | 1_实测正常 |
-| 安慕希_code版.py | 5_WAF拦截_建议配代理 |
-| 白雾茶_code版.py | 1_实测正常 |
-| 宝妈上班_code版.py | 1_实测正常 |
-| 贝因美_code版.py | 1_实测正常 |
-| 波司登_code版.py | 4_登录接口失效_待抓包 |
-| 潮玩电玩统一签到_code版.py | 1_实测正常 |
-| 潮玩门店统一_code版.py | 1_实测正常 |
-| 冲刺鸭云打印_code版.py | 4_登录接口失效_待抓包 |
-| 达美乐_code版.py | 6_服务器不可达_应用疑下线 |
-| 打卡赚小钱钱_code版.py | 4_登录接口失效_待抓包 |
-| 戴可思_code版.py | 1_实测正常 |
-| 迪卡侬_code版.py | 4_登录接口失效_待抓包 |
-| 巅峰美缝师_code版.py | 1_实测正常 |
-| 东呈_code版.py | 4_登录接口失效_待抓包 |
-| 东风日产人车生活_code版.py | 1_实测正常 |
-| 杜蕾斯会员中心_code版.py | 6_服务器不可达_应用疑下线 |
-| 多彩商城_code版.py | 2_账号受限_脚本正常 |
-| 敷尔佳_code版.py | 1_实测正常 |
-| 福友会_code版.py | 4_登录接口失效_待抓包 |
-| 富士instax_code版.py | 4_登录接口失效_待抓包 |
-| 古井贡酒_code版.py | 4_登录接口失效_待抓包 |
-| 谷雨_code版.py | 4_登录接口失效_待抓包 |
-| 瓜瓜粉丝俱乐部_code版.py | 4_登录接口失效_待抓包 |
-| 广汽丰田新能源_code版.py | 1_实测正常 |
-| 哈根达斯_code版.py | 6_服务器不可达_应用疑下线 |
-| 海底捞_code版.py | 4_登录接口失效_待抓包 |
-| 海信_code版.py | 3_登录OK_业务未全通 |
-| 海信爱家_code版.py | 4_登录接口失效_待抓包 |
-| 荷花博物馆_code版.py | 6_服务器不可达_应用疑下线 |
-| 荷叶健康_code版.py | 4_登录接口失效_待抓包 |
-| 红人库_code版.py | 4_登录接口失效_待抓包 |
-| 红色火箭_code版.py | 3_登录OK_业务未全通 |
-| 厚工坊_code版.py | 1_实测正常 |
-| 葫芦娃预约_code版.py | 4_登录接口失效_待抓包 |
-| 沪上阿姨_code版.py | 4_登录接口失效_待抓包 |
-| 华润通文体未来荟_code版.py | 4_登录接口失效_待抓包 |
-| 媓钻_code版.py | 4_登录接口失效_待抓包 |
-| 回收虎_code版.py | 4_登录接口失效_待抓包 |
-| 回收蛙_code版.py | 4_登录接口失效_待抓包 |
-| 交个朋友_code版.py | 1_实测正常 |
-| 节卡_code版.py | 4_登录接口失效_待抓包 |
-| 杰士邦安心福利社_code版.py | 4_登录接口失效_待抓包 |
-| 京东CK采集_code版.py | 4_登录接口失效_待抓包 |
-| 橘子樱桃_code版.py | 1_实测正常 |
-| 绝味鸭脖_code版.py | 4_登录接口失效_待抓包 |
-| 君品荟_code版.py | 1_实测正常 |
-| 开天工作室_code版.py | 4_登录接口失效_待抓包 |
-| 酷瓜好物_code版.py | 4_登录接口失效_待抓包 |
-| 快集合_code版.py | 1_实测正常 |
-| 老板电器ROKI_code版.py | 1_实测正常 |
-| 老板服务微商城_code版.py | 1_实测正常 |
-| 老友时光汇_code版.py | 6_服务器不可达_应用疑下线 |
-| 立乐家_code版.py | 4_登录接口失效_待抓包 |
-| 丽影云街_code版.py | 4_登录接口失效_待抓包 |
-| 林痣晴_code版.py | 1_实测正常 |
-| 霖久智服_code版.py | 4_登录接口失效_待抓包 |
-| 零食有鸣_code版.py | 1_实测正常 |
-| 骆驼_code版.py | 1_实测正常 |
-| 骆驼户外运动城_code版.py | 1_实测正常 |
-| 绿鼻子_code版.py | 1_实测正常 |
-| 绿袋环保_code版.py | 4_登录接口失效_待抓包 |
-| 绿地尊享会_code版.py | 4_登录接口失效_待抓包 |
-| 绿衣侠_code版.py | 4_登录接口失效_待抓包 |
-| 马伍旺饮料厂_code版.py | 1_实测正常 |
-| 玛氏宠享会_code版.py | 1_实测正常 |
-| 麦富迪_code版.py | 1_实测正常 |
-| 慢鸟_code版.py | 1_实测正常 |
-| 美的美居_code版.py | 4_登录接口失效_待抓包 |
-| 美的小天鹅_code版.py | 2_账号受限_脚本正常 |
-| 美孚臻享俱乐部_code版.py | 4_登录接口失效_待抓包 |
-| 蒙娜丽莎_code版.py | 4_登录接口失效_待抓包 |
-| 蜜蜂惊喜社_code版.py | 1_实测正常 |
-| 蜜雪冰城_code版.py | 1_实测正常 |
-| 牛牛短剧_code版.py | 2_账号受限_脚本正常 |
-| 牛油谷_code版.py | 1_实测正常 |
-| 胖哥俩_code版.py | 4_登录接口失效_待抓包 |
-| 拼多多果园_code版.py | 1_实测正常 |
-| 拼多多果园公众号版_code版.py | 1_实测正常 |
-| 企迈云商_code版.py | 4_登录接口失效_待抓包 |
-| 且悠_code版.py | 1_实测正常 |
-| 趣淘卡_code版.py | 1_实测正常 |
-| 趣蛙匠心优选_code版.py | 1_实测正常 |
-| 全棉时代_code版.py | 1_实测正常 |
-| 群脉_code版.py | 4_登录接口失效_待抓包 |
-| 热带时光家庭娱乐中心_code版.py | 1_实测正常 |
-| 人本_code版.py | 4_登录接口失效_待抓包 |
-| 社服益寿_code版.py | 4_登录接口失效_待抓包 |
-| 书亦烧仙草_code版.py | 4_登录接口失效_待抓包 |
-| 水费易_code版.py | 4_登录接口失效_待抓包 |
-| 所有女生会员中心_code版.py | 4_登录接口失效_待抓包 |
-| 塔斯汀_code版.py | 4_登录接口失效_待抓包 |
-| 拓路者_code版.py | 1_实测正常 |
-| 桃色_code版.py | 4_登录接口失效_待抓包 |
-| 特步_code版.py | 4_登录接口失效_待抓包 |
-| 腾讯地图_code版.py | 1_实测正常 |
-| 腾讯电脑管家_code版.py | 1_实测正常 |
-| 丸雅臻选_code版.py | 1_实测正常 |
-| 万家乐会员俱乐部_code版.py | 1_实测正常 |
-| 薇诺娜_code版.py | 3_登录OK_业务未全通 |
-| 无根博士_code版.py | 1_实测正常 |
-| 无影云电脑_code版.py | 2_账号受限_脚本正常 |
-| 捂碳星球_code版.py | 4_登录接口失效_待抓包 |
-| 喜茶_code版.py | 4_登录接口失效_待抓包 |
-| 骁龙骁友会_code版.py | 1_实测正常 |
-| 小当家_code版.py | 4_登录接口失效_待抓包 |
-| 小米社区_code版.py | 4_登录接口失效_待抓包 |
-| 小胖农场_code版.py | 6_服务器不可达_应用疑下线 |
-| 携程会员_code版.py | 1_实测正常 |
-| 心喜_code版.py | 4_登录接口失效_待抓包 |
-| 心相印_code版.py | 3_登录OK_业务未全通 |
-| 欣都龙城_code版.py | 2_账号受限_脚本正常 |
-| 新银鱼_code版.py | 6_服务器不可达_应用疑下线 |
-| 雪花_code版.py | 4_登录接口失效_待抓包 |
-| 爷爷不泡茶_code版.py | 2_账号受限_脚本正常 |
-| 一票达_code版.py | 4_登录接口失效_待抓包 |
-| 一汽丰田丰享汇_code版.py | 1_实测正常 |
-| 伊家乐享会_code版.py | 1_实测正常 |
-| 益禾堂_code版.py | 3_登录OK_业务未全通 |
-| 银鱼_code版.py | 6_服务器不可达_应用疑下线 |
-| 影视飓风_code版.py | 1_实测正常 |
-| 有赞_code版.py | 1_实测正常 |
-| 有赞通用_code版.py | 1_实测正常 |
-| 云朵钉钉_code版.py | 1_实测正常 |
-| 云筑工匠_code版.py | 4_登录接口失效_待抓包 |
-| 长虹美菱_code版.py | 4_登录接口失效_待抓包 |
-| 甄稀冰淇淋_code版.py | 5_WAF拦截_建议配代理 |
-| 植白说_code版.py | 1_实测正常 |
-| 植物星球_code版.py | 6_服务器不可达_应用疑下线 |
-| 赚转鱼_code版.py | 4_登录接口失效_待抓包 |
+| OPPO会员中心_code版.py | 自测 |
+| sinsin_code版.py | 自测 |
+| TILTA影像城_code版.py | 自测 |
+| ykb电玩城会员_code版.py | 自测 |
+| 爱果乐_code版.py | 自测 |
+| 爱隐形_code版.py | 自测 |
+| 爱优客_code版.py | 自测 |
+| 安慕希_code版.py | 自测 |
+| 白雾茶_code版.py | 自测 |
+| 宝妈上班_code版.py | 自测 |
+| 贝因美_code版.py | 自测 |
+| 波司登_code版.py | 自测 |
+| 潮玩电玩统一签到_code版.py | 自测 |
+| 潮玩门店统一_code版.py | 自测 |
+| 冲刺鸭云打印_code版.py | 自测 |
+| 达美乐_code版.py | 自测 |
+| 打卡赚小钱钱_code版.py | 自测 |
+| 戴可思_code版.py | 自测 |
+| 迪卡侬_code版.py | 自测 |
+| 巅峰美缝师_code版.py | 自测 |
+| 东呈_code版.py | 自测 |
+| 东风日产人车生活_code版.py | 自测 |
+| 杜蕾斯会员中心_code版.py | 自测 |
+| 多彩商城_code版.py | 自测 |
+| 敷尔佳_code版.py | 自测 |
+| 福友会_code版.py | 自测 |
+| 富士instax_code版.py | 自测 |
+| 古井贡酒_code版.py | 自测 |
+| 谷雨_code版.py | 自测 |
+| 瓜瓜粉丝俱乐部_code版.py | 自测 |
+| 广汽丰田新能源_code版.py | 自测 |
+| 哈根达斯_code版.py | 自测 |
+| 海底捞_code版.py | 自测 |
+| 海信_code版.py | 自测 |
+| 海信爱家_code版.py | 自测 |
+| 荷花博物馆_code版.py | 自测 |
+| 荷叶健康_code版.py | 自测 |
+| 红人库_code版.py | 自测 |
+| 红色火箭_code版.py | 自测 |
+| 厚工坊_code版.py | 自测 |
+| 葫芦娃预约_code版.py | 自测 |
+| 沪上阿姨_code版.py | 自测 |
+| 华润通文体未来荟_code版.py | 自测 |
+| 媓钻_code版.py | 自测 |
+| 回收虎_code版.py | 自测 |
+| 回收蛙_code版.py | 自测 |
+| 交个朋友_code版.py | 自测 |
+| 节卡_code版.py | 自测 |
+| 杰士邦安心福利社_code版.py | 自测 |
+| 京东CK采集_code版.py | 自测 |
+| 橘子樱桃_code版.py | 自测 |
+| 绝味鸭脖_code版.py | 自测 |
+| 君品荟_code版.py | 自测 |
+| 开天工作室_code版.py | 自测 |
+| 酷瓜好物_code版.py | 自测 |
+| 快集合_code版.py | 自测 |
+| 老板电器ROKI_code版.py | 自测 |
+| 老板服务微商城_code版.py | 自测 |
+| 老友时光汇_code版.py | 自测 |
+| 立乐家_code版.py | 自测 |
+| 丽影云街_code版.py | 自测 |
+| 林痣晴_code版.py | 自测 |
+| 霖久智服_code版.py | 自测 |
+| 零食有鸣_code版.py | 自测 |
+| 骆驼_code版.py | 自测 |
+| 骆驼户外运动城_code版.py | 自测 |
+| 绿鼻子_code版.py | 自测 |
+| 绿袋环保_code版.py | 自测 |
+| 绿地尊享会_code版.py | 自测 |
+| 绿衣侠_code版.py | 自测 |
+| 马伍旺饮料厂_code版.py | 自测 |
+| 玛氏宠享会_code版.py | 自测 |
+| 麦富迪_code版.py | 自测 |
+| 慢鸟_code版.py | 自测 |
+| 美的美居_code版.py | 自测 |
+| 美的小天鹅_code版.py | 自测 |
+| 美孚臻享俱乐部_code版.py | 自测 |
+| 蒙娜丽莎_code版.py | 自测 |
+| 蜜蜂惊喜社_code版.py | 自测 |
+| 蜜雪冰城_code版.py | 自测 |
+| 牛牛短剧_code版.py | 自测 |
+| 牛油谷_code版.py | 自测 |
+| 胖哥俩_code版.py | 自测 |
+| 拼多多果园_code版.py | 自测 |
+| 拼多多果园公众号版_code版.py | 自测 |
+| 企迈云商_code版.py | 自测 |
+| 且悠_code版.py | 自测 |
+| 趣淘卡_code版.py | 自测 |
+| 趣蛙匠心优选_code版.py | 自测 |
+| 全棉时代_code版.py | 自测 |
+| 群脉_code版.py | 自测 |
+| 热带时光家庭娱乐中心_code版.py | 自测 |
+| 人本_code版.py | 自测 |
+| 社服益寿_code版.py | 自测 |
+| 书亦烧仙草_code版.py | 自测 |
+| 水费易_code版.py | 自测 |
+| 所有女生会员中心_code版.py | 自测 |
+| 塔斯汀_code版.py | 自测 |
+| 拓路者_code版.py | 自测 |
+| 桃色_code版.py | 自测 |
+| 特步_code版.py | 自测 |
+| 腾讯地图_code版.py | 自测 |
+| 腾讯电脑管家_code版.py | 自测 |
+| 丸雅臻选_code版.py | 自测 |
+| 万家乐会员俱乐部_code版.py | 自测 |
+| 薇诺娜_code版.py | 自测 |
+| 无根博士_code版.py | 自测 |
+| 无影云电脑_code版.py | 自测 |
+| 捂碳星球_code版.py | 自测 |
+| 喜茶_code版.py | 自测 |
+| 骁龙骁友会_code版.py | 自测 |
+| 小当家_code版.py | 自测 |
+| 小米社区_code版.py | 自测 |
+| 小胖农场_code版.py | 自测 |
+| 携程会员_code版.py | 自测 |
+| 心喜_code版.py | 自测 |
+| 心相印_code版.py | 自测 |
+| 欣都龙城_code版.py | 自测 |
+| 新银鱼_code版.py | 自测 |
+| 雪花_code版.py | 自测 |
+| 爷爷不泡茶_code版.py | 自测 |
+| 一票达_code版.py | 自测 |
+| 一汽丰田丰享汇_code版.py | 自测 |
+| 伊家乐享会_code版.py | 自测 |
+| 益禾堂_code版.py | 自测 |
+| 银鱼_code版.py | 自测 |
+| 影视飓风_code版.py | 自测 |
+| 有赞_code版.py | 自测 |
+| 有赞通用_code版.py | 自测 |
+| 云朵钉钉_code版.py | 自测 |
+| 云筑工匠_code版.py | 自测 |
+| 长虹美菱_code版.py | 自测 |
+| 甄稀冰淇淋_code版.py | 自测 |
+| 植白说_code版.py | 自测 |
+| 植物星球_code版.py | 自测 |
+| 赚转鱼_code版.py | 自测 |
 
-## 状态说明
+## 如何使用
 
-| 分类 | 说明 |
-|------|------|
-| 1_实测正常 | 已实测可正常使用的脚本 |
-| 2_账号受限_脚本正常 | 脚本本身正常，但账号受限导致部分功能受限 |
-| 3_登录OK_业务未全通 | 登录成功，但部分业务流程尚未完全跑通 |
-| 4_登录接口失效_待抓包 | 登录接口已失效，需重新抓包修复 |
-| 5_WAF拦截_建议配代理 | 触发 WAF 拦截，建议配置代理后使用 |
-| 6_服务器不可达_应用疑下线 | 目标服务器不可达，对应应用疑已下线 |
+1. 进入 code/ 目录，按需取用脚本；
+2. 安装依赖：在脚本目录运行 pip install -r requirements.txt，若没有该文件则按脚本顶部 import 自行安装对应库；
+3. 部分脚本涉及账号或 Cookie，请自行在脚本内配置，勿泄露个人信息；
+4. 若脚本触发 WAF 或访问受限，建议在已配置代理（如 Clash）的网络环境下运行。
 
-## 使用说明
+## 如何拉取本仓库
 
-1. 进入 code/ 目录取用脚本；
-2. 多数脚本依赖第三方库，使用前请自行 pip install 所需依赖；
-3. 涉及账号 / Cookie 的脚本，请自行配置，勿泄露个人信息；
-4. 第 5 类触发 WAF 的脚本，建议在配置代理（如 Clash）的环境下运行。
+`ash
+# 方式一：HTTPS（密码处填 Personal Access Token）
+git clone https://github.com/L0NE-6/code-collection-share.git
+
+# 方式二：SSH（需先在 GitHub 配置本机公钥）
+git clone git@github.com:L0NE-6/code-collection-share.git
+
+# 进入目录
+cd code-collection-share
+`"
+# code-collection-share  > 代码本收集与分享  收集整理自用的各类小脚本（主要为 Python），涵盖签到、自动任务、抓包分析、接口调用等场景。所有脚本统一放在 code/ 目录下（单文件夹）。  ## 脚本列表  | 脚本名称 | 状态 | |----------|------| | OPPO会员中心_code版.py | 自测 | | sinsin_code版.py | 自测 | | TILTA影像城_code版.py | 自测 | | ykb电玩城会员_code版.py | 自测 | | 爱果乐_code版.py | 自测 | | 爱隐形_code版.py | 自测 | | 爱优客_code版.py | 自测 | | 安慕希_code版.py | 自测 | | 白雾茶_code版.py | 自测 | | 宝妈上班_code版.py | 自测 | | 贝因美_code版.py | 自测 | | 波司登_code版.py | 自测 | | 潮玩电玩统一签到_code版.py | 自测 | | 潮玩门店统一_code版.py | 自测 | | 冲刺鸭云打印_code版.py | 自测 | | 达美乐_code版.py | 自测 | | 打卡赚小钱钱_code版.py | 自测 | | 戴可思_code版.py | 自测 | | 迪卡侬_code版.py | 自测 | | 巅峰美缝师_code版.py | 自测 | | 东呈_code版.py | 自测 | | 东风日产人车生活_code版.py | 自测 | | 杜蕾斯会员中心_code版.py | 自测 | | 多彩商城_code版.py | 自测 | | 敷尔佳_code版.py | 自测 | | 福友会_code版.py | 自测 | | 富士instax_code版.py | 自测 | | 古井贡酒_code版.py | 自测 | | 谷雨_code版.py | 自测 | | 瓜瓜粉丝俱乐部_code版.py | 自测 | | 广汽丰田新能源_code版.py | 自测 | | 哈根达斯_code版.py | 自测 | | 海底捞_code版.py | 自测 | | 海信_code版.py | 自测 | | 海信爱家_code版.py | 自测 | | 荷花博物馆_code版.py | 自测 | | 荷叶健康_code版.py | 自测 | | 红人库_code版.py | 自测 | | 红色火箭_code版.py | 自测 | | 厚工坊_code版.py | 自测 | | 葫芦娃预约_code版.py | 自测 | | 沪上阿姨_code版.py | 自测 | | 华润通文体未来荟_code版.py | 自测 | | 媓钻_code版.py | 自测 | | 回收虎_code版.py | 自测 | | 回收蛙_code版.py | 自测 | | 交个朋友_code版.py | 自测 | | 节卡_code版.py | 自测 | | 杰士邦安心福利社_code版.py | 自测 | | 京东CK采集_code版.py | 自测 | | 橘子樱桃_code版.py | 自测 | | 绝味鸭脖_code版.py | 自测 | | 君品荟_code版.py | 自测 | | 开天工作室_code版.py | 自测 | | 酷瓜好物_code版.py | 自测 | | 快集合_code版.py | 自测 | | 老板电器ROKI_code版.py | 自测 | | 老板服务微商城_code版.py | 自测 | | 老友时光汇_code版.py | 自测 | | 立乐家_code版.py | 自测 | | 丽影云街_code版.py | 自测 | | 林痣晴_code版.py | 自测 | | 霖久智服_code版.py | 自测 | | 零食有鸣_code版.py | 自测 | | 骆驼_code版.py | 自测 | | 骆驼户外运动城_code版.py | 自测 | | 绿鼻子_code版.py | 自测 | | 绿袋环保_code版.py | 自测 | | 绿地尊享会_code版.py | 自测 | | 绿衣侠_code版.py | 自测 | | 马伍旺饮料厂_code版.py | 自测 | | 玛氏宠享会_code版.py | 自测 | | 麦富迪_code版.py | 自测 | | 慢鸟_code版.py | 自测 | | 美的美居_code版.py | 自测 | | 美的小天鹅_code版.py | 自测 | | 美孚臻享俱乐部_code版.py | 自测 | | 蒙娜丽莎_code版.py | 自测 | | 蜜蜂惊喜社_code版.py | 自测 | | 蜜雪冰城_code版.py | 自测 | | 牛牛短剧_code版.py | 自测 | | 牛油谷_code版.py | 自测 | | 胖哥俩_code版.py | 自测 | | 拼多多果园_code版.py | 自测 | | 拼多多果园公众号版_code版.py | 自测 | | 企迈云商_code版.py | 自测 | | 且悠_code版.py | 自测 | | 趣淘卡_code版.py | 自测 | | 趣蛙匠心优选_code版.py | 自测 | | 全棉时代_code版.py | 自测 | | 群脉_code版.py | 自测 | | 热带时光家庭娱乐中心_code版.py | 自测 | | 人本_code版.py | 自测 | | 社服益寿_code版.py | 自测 | | 书亦烧仙草_code版.py | 自测 | | 水费易_code版.py | 自测 | | 所有女生会员中心_code版.py | 自测 | | 塔斯汀_code版.py | 自测 | | 拓路者_code版.py | 自测 | | 桃色_code版.py | 自测 | | 特步_code版.py | 自测 | | 腾讯地图_code版.py | 自测 | | 腾讯电脑管家_code版.py | 自测 | | 丸雅臻选_code版.py | 自测 | | 万家乐会员俱乐部_code版.py | 自测 | | 薇诺娜_code版.py | 自测 | | 无根博士_code版.py | 自测 | | 无影云电脑_code版.py | 自测 | | 捂碳星球_code版.py | 自测 | | 喜茶_code版.py | 自测 | | 骁龙骁友会_code版.py | 自测 | | 小当家_code版.py | 自测 | | 小米社区_code版.py | 自测 | | 小胖农场_code版.py | 自测 | | 携程会员_code版.py | 自测 | | 心喜_code版.py | 自测 | | 心相印_code版.py | 自测 | | 欣都龙城_code版.py | 自测 | | 新银鱼_code版.py | 自测 | | 雪花_code版.py | 自测 | | 爷爷不泡茶_code版.py | 自测 | | 一票达_code版.py | 自测 | | 一汽丰田丰享汇_code版.py | 自测 | | 伊家乐享会_code版.py | 自测 | | 益禾堂_code版.py | 自测 | | 银鱼_code版.py | 自测 | | 影视飓风_code版.py | 自测 | | 有赞_code版.py | 自测 | | 有赞通用_code版.py | 自测 | | 云朵钉钉_code版.py | 自测 | | 云筑工匠_code版.py | 自测 | | 长虹美菱_code版.py | 自测 | | 甄稀冰淇淋_code版.py | 自测 | | 植白说_code版.py | 自测 | | 植物星球_code版.py | 自测 | | 赚转鱼_code版.py | 自测 |  ## 如何使用  1. 进入 code/ 目录，按需取用脚本； 2. 安装依赖：在脚本目录运行 pip install -r requirements.txt，若没有该文件则按脚本顶部 import 自行安装对应库； 3. 部分脚本涉及账号或 Cookie，请自行在脚本内配置，勿泄露个人信息； 4. 若脚本触发 WAF 或访问受限，建议在已配置代理（如 Clash）的网络环境下运行。  ## 如何拉取本仓库  `ash # 方式一：HTTPS（密码处填 Personal Access Token） git clone https://github.com/L0NE-6/code-collection-share.git  # 方式二：SSH（需先在 GitHub 配置本机公钥） git clone git@github.com:L0NE-6/code-collection-share.git  # 进入目录 cd code-collection-share += "
+# code-collection-share  > 代码本收集与分享  收集整理自用的各类小脚本（主要为 Python），涵盖签到、自动任务、抓包分析、接口调用等场景。所有脚本统一放在 code/ 目录下（单文件夹）。  ## 脚本列表  | 脚本名称 | 状态 | |----------|------| | OPPO会员中心_code版.py | 自测 | | sinsin_code版.py | 自测 | | TILTA影像城_code版.py | 自测 | | ykb电玩城会员_code版.py | 自测 | | 爱果乐_code版.py | 自测 | | 爱隐形_code版.py | 自测 | | 爱优客_code版.py | 自测 | | 安慕希_code版.py | 自测 | | 白雾茶_code版.py | 自测 | | 宝妈上班_code版.py | 自测 | | 贝因美_code版.py | 自测 | | 波司登_code版.py | 自测 | | 潮玩电玩统一签到_code版.py | 自测 | | 潮玩门店统一_code版.py | 自测 | | 冲刺鸭云打印_code版.py | 自测 | | 达美乐_code版.py | 自测 | | 打卡赚小钱钱_code版.py | 自测 | | 戴可思_code版.py | 自测 | | 迪卡侬_code版.py | 自测 | | 巅峰美缝师_code版.py | 自测 | | 东呈_code版.py | 自测 | | 东风日产人车生活_code版.py | 自测 | | 杜蕾斯会员中心_code版.py | 自测 | | 多彩商城_code版.py | 自测 | | 敷尔佳_code版.py | 自测 | | 福友会_code版.py | 自测 | | 富士instax_code版.py | 自测 | | 古井贡酒_code版.py | 自测 | | 谷雨_code版.py | 自测 | | 瓜瓜粉丝俱乐部_code版.py | 自测 | | 广汽丰田新能源_code版.py | 自测 | | 哈根达斯_code版.py | 自测 | | 海底捞_code版.py | 自测 | | 海信_code版.py | 自测 | | 海信爱家_code版.py | 自测 | | 荷花博物馆_code版.py | 自测 | | 荷叶健康_code版.py | 自测 | | 红人库_code版.py | 自测 | | 红色火箭_code版.py | 自测 | | 厚工坊_code版.py | 自测 | | 葫芦娃预约_code版.py | 自测 | | 沪上阿姨_code版.py | 自测 | | 华润通文体未来荟_code版.py | 自测 | | 媓钻_code版.py | 自测 | | 回收虎_code版.py | 自测 | | 回收蛙_code版.py | 自测 | | 交个朋友_code版.py | 自测 | | 节卡_code版.py | 自测 | | 杰士邦安心福利社_code版.py | 自测 | | 京东CK采集_code版.py | 自测 | | 橘子樱桃_code版.py | 自测 | | 绝味鸭脖_code版.py | 自测 | | 君品荟_code版.py | 自测 | | 开天工作室_code版.py | 自测 | | 酷瓜好物_code版.py | 自测 | | 快集合_code版.py | 自测 | | 老板电器ROKI_code版.py | 自测 | | 老板服务微商城_code版.py | 自测 | | 老友时光汇_code版.py | 自测 | | 立乐家_code版.py | 自测 | | 丽影云街_code版.py | 自测 | | 林痣晴_code版.py | 自测 | | 霖久智服_code版.py | 自测 | | 零食有鸣_code版.py | 自测 | | 骆驼_code版.py | 自测 | | 骆驼户外运动城_code版.py | 自测 | | 绿鼻子_code版.py | 自测 | | 绿袋环保_code版.py | 自测 | | 绿地尊享会_code版.py | 自测 | | 绿衣侠_code版.py | 自测 | | 马伍旺饮料厂_code版.py | 自测 | | 玛氏宠享会_code版.py | 自测 | | 麦富迪_code版.py | 自测 | | 慢鸟_code版.py | 自测 | | 美的美居_code版.py | 自测 | | 美的小天鹅_code版.py | 自测 | | 美孚臻享俱乐部_code版.py | 自测 | | 蒙娜丽莎_code版.py | 自测 | | 蜜蜂惊喜社_code版.py | 自测 | | 蜜雪冰城_code版.py | 自测 | | 牛牛短剧_code版.py | 自测 | | 牛油谷_code版.py | 自测 | | 胖哥俩_code版.py | 自测 | | 拼多多果园_code版.py | 自测 | | 拼多多果园公众号版_code版.py | 自测 | | 企迈云商_code版.py | 自测 | | 且悠_code版.py | 自测 | | 趣淘卡_code版.py | 自测 | | 趣蛙匠心优选_code版.py | 自测 | | 全棉时代_code版.py | 自测 | | 群脉_code版.py | 自测 | | 热带时光家庭娱乐中心_code版.py | 自测 | | 人本_code版.py | 自测 | | 社服益寿_code版.py | 自测 | | 书亦烧仙草_code版.py | 自测 | | 水费易_code版.py | 自测 | | 所有女生会员中心_code版.py | 自测 | | 塔斯汀_code版.py | 自测 | | 拓路者_code版.py | 自测 | | 桃色_code版.py | 自测 | | 特步_code版.py | 自测 | | 腾讯地图_code版.py | 自测 | | 腾讯电脑管家_code版.py | 自测 | | 丸雅臻选_code版.py | 自测 | | 万家乐会员俱乐部_code版.py | 自测 | | 薇诺娜_code版.py | 自测 | | 无根博士_code版.py | 自测 | | 无影云电脑_code版.py | 自测 | | 捂碳星球_code版.py | 自测 | | 喜茶_code版.py | 自测 | | 骁龙骁友会_code版.py | 自测 | | 小当家_code版.py | 自测 | | 小米社区_code版.py | 自测 | | 小胖农场_code版.py | 自测 | | 携程会员_code版.py | 自测 | | 心喜_code版.py | 自测 | | 心相印_code版.py | 自测 | | 欣都龙城_code版.py | 自测 | | 新银鱼_code版.py | 自测 | | 雪花_code版.py | 自测 | | 爷爷不泡茶_code版.py | 自测 | | 一票达_code版.py | 自测 | | 一汽丰田丰享汇_code版.py | 自测 | | 伊家乐享会_code版.py | 自测 | | 益禾堂_code版.py | 自测 | | 银鱼_code版.py | 自测 | | 影视飓风_code版.py | 自测 | | 有赞_code版.py | 自测 | | 有赞通用_code版.py | 自测 | | 云朵钉钉_code版.py | 自测 | | 云筑工匠_code版.py | 自测 | | 长虹美菱_code版.py | 自测 | | 甄稀冰淇淋_code版.py | 自测 | | 植白说_code版.py | 自测 | | 植物星球_code版.py | 自测 | | 赚转鱼_code版.py | 自测 |  ## 如何使用  1. 进入 code/ 目录，按需取用脚本； 2. 安装依赖：在脚本目录运行 pip install -r requirements.txt，若没有该文件则按脚本顶部 import 自行安装对应库； 3. 部分脚本涉及账号或 Cookie，请自行在脚本内配置，勿泄露个人信息； 4. 若脚本触发 WAF 或访问受限，建议在已配置代理（如 Clash）的网络环境下运行。  ## 如何拉取本仓库  `ash # 方式一：HTTPS（密码处填 Personal Access Token） git clone https://github.com/L0NE-6/code-collection-share.git  # 方式二：SSH（需先在 GitHub 配置本机公钥） git clone git@github.com:L0NE-6/code-collection-share.git  # 进入目录 cd code-collection-share += 
+
+本仓库仅用于学习与个人自动化研究。请勿将脚本用于任何违反平台规则或法律法规的用途，使用风险由使用者自行承担。
 
 ---
 单走一个6（L0NE-6） · 代码收集分享
