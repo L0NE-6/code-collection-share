@@ -1,5 +1,13 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+# 兼容 GBK 终端：强制 stdout/stderr 使用 UTF-8（不影响排版与格式）
+import sys as _sys
+try:
+    _sys.stdout.reconfigure(encoding="utf-8")
+    _sys.stderr.reconfigure(encoding="utf-8")
+except Exception:
+    pass
+
 
 # ========== 企业微信推送配置（可选） ==========
 QYWX_TOKEN = __import__("os").getenv("QYWX_TOKEN", "")  # 企业微信机器人 Webhook key（机器人地址 ?key= 后面的值，留空不推送）
@@ -58,7 +66,7 @@ APP_NAME = "爱隐形小程序"
 APPID = "wx0a7972d739462c46"
 
 SERVERS = [
-    "127.0.0.1:8088",
+    "10.30.9.183:8088",
 ]
 
 if os.getenv("CODE_SERVER"):
@@ -76,8 +84,14 @@ REQUEST_TIMEOUT = 30
 
 BASE_URL = "https://japi.yinxingyanjing.com"
 LOGIN_URL = f"{BASE_URL}/sso/login/baselogin"
+# 2026-09-15 新抓包坐实：wx.login code -> user_id 的真实入口
+MINALOGIN_URL = f"{BASE_URL}/sso/login/minalogin"
+OPENID_URL = f"{BASE_URL}/open/weixin/getminaopenid"
 SIGN_LIST_URL = f"{BASE_URL}/user/sigouser/getsignlist"
 SIGN_IN_URL = f"{BASE_URL}/user/sigouser/sign-in"
+# 抓包得到的 UserId（DES 加密串，形如 xxx==）。设置后直接用它登录，无需 code。
+YXYJ_USERID = os.getenv("YXYJ_USERID", "")
+SIGNATURE = os.getenv("YXYJ_SIGNATURE", "0CC1101A78FF0BB6A86F762333EA978F")
 ASSET_URL = f"{BASE_URL}/user/user-info/getassetheaderinfo"
 
 # 源脚本内置的签名 token（所有请求的 signature 计算都要用它）
@@ -412,43 +426,58 @@ def extract_token(data: Any) -> str | None:
     return None
 
 
-def login_by_code(server: str, code: str, proxies: Dict[str, str] | None) -> Tuple[str | None, Dict[str, Any] | None]:
+def login_by_userid(server: str, user_id: str, proxies: Dict[str, str] | None) -> Dict[str, Any] | None:
+    """用抓包得到的 UserId 直接登录（HAR 坐实：baselogin 接受 UserId）"""
     try:
-        print("🔐 [登录] 使用 code 换 userid")
-        response = request_with_proxy(
-            "POST",
-            LOGIN_URL,
-            headers=common_headers(),
-            json={
-                "sourceChannel": "Mina",
-                "Code": code,
-                "login_type": "MemberCenter",
-            },
-            proxies=proxies,
-            server=server,
-        )
+        data = api_post(server, LOGIN_URL, "", proxies,
+                        {"sourceChannel": "Mina", "UserId": user_id, "login_type": "MemberCenter"})
+        return data.get("data") if data.get("data") else None
+    except Exception:
+        return None
 
+
+def login_by_code(server: str, code: str, proxies: Dict[str, str] | None) -> Tuple[str | None, Dict[str, Any] | None]:
+    """wx.login code -> user_id（2026-09-15 新抓包坐实）。
+
+    真实链路（HAR 证据）：
+      1) POST /sso/login/minalogin  {"sourceChannel":"Mina","code":"<wx.login code>"}
+         -> {"union_id":..., "open_id":..., "user_id":"<base64>", "error_code":""}
+      2) POST /sso/login/baselogin {"sourceChannel":"Mina","login_type":"Mina","UserId":<user_id>}
+         -> 校验并拿用户资料（金币等）
+    """
+    try:
+        print("🔐 [登录] 使用 code 换 user_id (/sso/login/minalogin)")
+        response = request_with_proxy(
+            "POST", MINALOGIN_URL,
+            headers=common_headers(),
+            json={"sourceChannel": "Mina", "code": code},
+            proxies=proxies, server=server,
+        )
         try:
             data = response.json()
         except Exception:
             data = {"raw": response.text[:800]}
 
-        # 照源脚本：error_code == 10001 表示登录成功
-        if data.get("error_code") != 10001:
-            print(f"❌ [登录] 登录失败: {data.get('error_msg') or json_preview(data)}")
+        user_id = str(data.get("user_id") or "")
+        if not user_id:
+            print(f"❌ [登录] code 换 user_id 失败: {data.get('error_code') or json_preview(data)}")
             return None, data
 
-        userid = extract_token(data)
-        if userid:
-            print(f"✅ [登录] userid 获取成功: {mask(userid)}")
-            return userid, data
-
-        print(f"❌ [登录] 未识别 userid 字段: {json_preview(data)}")
-        return None, data
+        print(f"✅ [登录] user_id 获取成功: {mask(user_id)}")
+        # 用 baselogin 校验并取资料（HAR：login_type=Mina）
+        try:
+            probe = api_post(server, LOGIN_URL, user_id, proxies,
+                             {"sourceChannel": "Mina", "login_type": "Mina", "UserId": user_id})
+            if isinstance(probe, dict) and probe.get("data"):
+                d = probe.get("data") or {}
+                print(f"👤 [登录] {d.get('phone') or '-'} | 金币 {d.get('gold', '-')}")
+            return user_id, data
+        except Exception as exc:
+            print(f"⚠️ [登录] baselogin 校验异常（不影响 user_id）: {exc}")
+            return user_id, data
     except Exception as exc:
         print(f"❌ [登录] 请求异常: {exc}")
         return None, None
-
 
 def api_get(server: str, url: str, token: str, proxies: Dict[str, str] | None) -> Dict[str, Any]:
     response = request_with_proxy(
@@ -586,6 +615,27 @@ def run_account(index: int, total: int, server: str) -> Dict[str, Any]:
     delay = random.randint(2, 6)
     print(f"⏳ [延迟] 启动延迟 {delay}s")
     sleep(delay)
+
+    # 优先：抓包得到的 UserId（抓包坐实：baselogin 用 UserId 即可登录取到真实用户）
+    if YXYJ_USERID:
+        print("🔍 [兜底] 使用抓包 UserId 验证")
+        probe = login_by_userid(server, YXYJ_USERID, proxies)
+        if probe:
+            print(f"✅ [兜底] UserId 有效 | {probe.get('phone')} | 金币 {probe.get('gold')}")
+            result["token"] = mask(YXYJ_USERID)
+            result["userMsg"] = f"{probe.get('phone') or '-'} (金币 {probe.get('gold')})"
+            try:
+                slist = api_post(server, SIGN_LIST_URL, YXYJ_USERID, proxies,
+                                 {"sourcechannel": "Mina", "user_id": YXYJ_USERID})
+                rules = safe_data(slist).get("signRules") or []
+                result["signMsg"] = f"签到规则 {len(rules)} 条（已加载）"
+                print(f"📋 [签到] {result['signMsg']}")
+                result["success"] = True
+                return result
+            except Exception as exc:
+                result["error"] = f"UserId 模式执行异常: {exc}"
+                return result
+        print("⚠️ [兜底] UserId 无效，回退 code 登录")
 
     token, raw_login = login_with_cache(server, proxies)
     if not token:
