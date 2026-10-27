@@ -53,7 +53,7 @@ import traceback
 import uuid
 from datetime import datetime
 from typing import Any, Dict, List, Tuple
-from urllib.parse import urlencode
+from urllib.parse import quote, urlencode
 
 import requests
 

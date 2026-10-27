@@ -47,6 +47,7 @@ import urllib.parse
 import uuid as uuid_module
 from datetime import datetime
 from typing import Any, Dict, List, Tuple
+from urllib.parse import quote
 
 import requests
 
