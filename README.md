@@ -178,6 +178,10 @@ cd code-collection-share
 - 提交 Issue：https://github.com/L0NE-6/code-collection-share/issues
 - 提交 Pull Request：https://github.com/L0NE-6/code-collection-share/pulls
 
+## 许可与第三方内容
+
+本仓库是多来源脚本合集，**不对第三方脚本统一授予开源许可证**。每个文件仍受原作者权利和原始条款约束；仓库整理、README 与 L0NE-6 自己新增的内容按 [`LICENSE`](LICENSE) 说明使用。请勿将本仓库付费转售、冒充原创或搬运到付费平台。
+
 ## 免责声明
 
 本仓库仅用于学习与个人自动化研究。请勿将脚本用于任何违反平台规则或法律法规的用途，使用风险由使用者自行承担。
